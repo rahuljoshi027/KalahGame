@@ -30,7 +30,7 @@ JavaDocs
 Code is documented with as much as possible details. 
 
 How to build?
-mvn clean install (mvn clean install -DskipTests)
+mvn clean install (mvn clean install -DskipTests to skip test cases)
 
 How to run the application?
 mvn spring-boot:run
