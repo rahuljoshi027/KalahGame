@@ -25,6 +25,7 @@ Tech Stack
 * Design Patters (Factory, Chain of responsibilities, Builder)
 * TDD (as far as possible)
 * Maven
+* Followed clean code approach as far as possible
 
 JavaDocs
 Code is documented with as much as possible details. 
