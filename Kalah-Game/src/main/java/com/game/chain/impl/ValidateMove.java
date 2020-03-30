@@ -27,8 +27,6 @@ import com.game.utilities.PredicateUtilityHelper;
 @Service
 public class ValidateMove implements ResponsibilityChain {
 	Logger logger = LoggerFactory.getLogger(ValidateMove.class);
-	//Function<Integer, String> calculateCurrentPlayer = pit->(pit>=1&&pit<=6)?GameConstants.SOUTH_PLAYER:GameConstants.NORTH_PLAYER;
-	//Predicate<Integer> isThisKalah = pit -> (pit==7||pit==14)?true:false;
 	
 	/**
 	 * This method implements various checks in order to keep
@@ -41,7 +39,6 @@ public class ValidateMove implements ResponsibilityChain {
 	public void applyGameRules(KalahGameDO kGDO, int pit) {
 
 		String currentPlayer = FunctionUtilityHelper.calculateCurrentPlayer.apply(pit); 
-				//calculateCurrentPlayer.apply(pit);
 		kGDO.setCurrentPlayer(currentPlayer);
 		logger.debug("validating move for game "+kGDO.getId());
 		if(kGDO.isGameOver()) {

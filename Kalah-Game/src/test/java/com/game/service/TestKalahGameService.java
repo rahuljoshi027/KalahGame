@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.annotation.DirtiesContext.MethodMode;
 
 import com.game.constants.GameConstants;
 import com.game.entities.KalahBoardDO;
@@ -22,7 +23,7 @@ public class TestKalahGameService {
 	KalahGameService kalahGameService;
 	
 	@Test
-	@DirtiesContext
+	@DirtiesContext(methodMode = MethodMode.AFTER_METHOD)
 	public void testCreateKalahInstance() {
 		KalahGameDO expectedKGDO = TestUtilityHelper.buildKalahGameDO(null);
 		KalahGameDO actualKGDO = kalahGameService.createKalahInstance(null);
@@ -30,7 +31,7 @@ public class TestKalahGameService {
 	}
 	
 	@Test
-	@DirtiesContext
+	@DirtiesContext(methodMode = MethodMode.AFTER_METHOD)
 	public void testAddKalahInstance() {
 		KalahGameDO expectedKGDO = TestUtilityHelper.buildKalahGameDO(null);
 		KalahGameDO actualKGDO = kalahGameService.addKalahGameInstance(expectedKGDO);

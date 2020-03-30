@@ -1,10 +1,8 @@
 package com.game.chain.impl;
 
-import java.util.function.Function;
-import java.util.function.Predicate;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.Ordered;
 import org.springframework.stereotype.Service;
 
 import com.game.chain.ResponsibilityChain;
@@ -27,10 +25,6 @@ import com.game.utilities.PredicateUtilityHelper;
 @Service
 public class MakeMove implements ResponsibilityChain {
 	Logger logger = LoggerFactory.getLogger(MakeMove.class);
-	//Function<Integer, String> getKalahLocation = pit->(pit==7)?GameConstants.SOUTH_PLAYER:GameConstants.NORTH_PLAYER;
-	//Predicate<Integer> isKalah = pit->(pit==GameConstants.SOUTHKALAHINDEX||pit==GameConstants.NORTHKALAHINDEX)?true:false;
-	//Function<Integer, String> getPitLocation = pit->(pit>=1&&pit<=6)?GameConstants.SOUTH_PLAYER:GameConstants.NORTH_PLAYER;
-	//Function<String,Integer> getKalahPitIndex = loc -> loc.equals(GameConstants.SOUTH_PLAYER)?GameConstants.SOUTHKALAHINDEX:GameConstants.NORTHKALAHINDEX;
 	
 	/**
 	 * 

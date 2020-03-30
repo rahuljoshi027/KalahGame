@@ -5,7 +5,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
-import org.springframework.web.servlet.HandlerAdapter;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 /**

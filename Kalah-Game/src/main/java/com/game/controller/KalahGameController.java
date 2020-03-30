@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.game.datatransferobjects.KalahCreatedResponseDTO;
 import com.game.datatransferobjects.KalahResponseDTO;
+import com.game.service.PlayKalahService;
 import com.game.service.impl.KalahGameServiceImpl;
 import com.game.service.impl.PlayKalahServiceImpl;
 import com.game.utilities.UtilityHelper;
@@ -33,12 +34,11 @@ import io.swagger.annotations.ApiOperation;
 public class KalahGameController {
 
 	
-	private PlayKalahServiceImpl playKalahServiceImpl;
+	private PlayKalahService playKalahService;
 	
 	@Autowired
-	KalahGameController(PlayKalahServiceImpl playKalahServiceImpl,
-						KalahGameServiceImpl kalahServiceImpl){
-		this.playKalahServiceImpl = playKalahServiceImpl;
+	KalahGameController(PlayKalahService playKalahService){
+		this.playKalahService = playKalahService;
 	}
 	
 	/**
@@ -53,7 +53,7 @@ public class KalahGameController {
 	public ResponseEntity<KalahCreatedResponseDTO> createKalah() {
 		return
 		UtilityHelper.buildKalahCreatedResponseDTO(
-				playKalahServiceImpl.createAndAddKalahInstance());
+				playKalahService.createAndAddKalahInstance());
 	}
 	
 	/**
@@ -69,7 +69,7 @@ public class KalahGameController {
 										 @PathVariable("pitId") @Min(1) @Max(14)int pitId) {
 		return
 		UtilityHelper.buildKalahResponseDTO(
-		playKalahServiceImpl.executeMove(gameId, pitId));
+				playKalahService.executeMove(gameId, pitId));
 	}
 	
 }
