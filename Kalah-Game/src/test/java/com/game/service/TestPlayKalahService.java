@@ -105,4 +105,34 @@ public class TestPlayKalahService {
 		
 	}
 	
+	@Test
+	@DirtiesContext(methodMode = MethodMode.AFTER_METHOD)
+	public void testKalahMove_4() {
+		int[] expectedPits = new int[15];
+		Arrays.fill(expectedPits, 6);
+		expectedPits[0] = -1;
+		expectedPits[8] = expectedPits[9]=expectedPits[7]=0;
+		expectedPits[3] = expectedPits[4]=expectedPits[5]=expectedPits[6]=6;
+		expectedPits[14]=2;
+		expectedPits[1]=expectedPits[2]=7;
+		expectedPits[10]=expectedPits[11]=expectedPits[12]=expectedPits[13]=8;
+		KalahGameDO kGDO = playKalahService.createAndAddKalahInstance();
+		playKalahService.executeMove(kGDO.getId(), 8);
+		kGDO = playKalahService.executeMove(kGDO.getId(), 9);
+		assertArrayEquals(expectedPits, kGDO.getKalahBoardDO().getPits());
+		
+	}
+	
+	@Test
+	@DirtiesContext(methodMode = MethodMode.AFTER_METHOD)
+	public void testWrongPlayerException() {
+		KalahGameDO kGDO = playKalahService.createAndAddKalahInstance();
+		playKalahService.executeMove(kGDO.getId(), 1);
+		Throwable t = assertThrows(BadRequestException.class,()->  playKalahService.executeMove(kGDO.getId(), 8));
+		assertEquals(t.getMessage(),"Wrong move. Player selection incorrect");
+	}
+	
+	
+	
+	
 }
