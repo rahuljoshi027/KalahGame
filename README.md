@@ -2,15 +2,15 @@
 
 What all things are done ?
 
-Architecture
+Architecture -
 It was chosen to use architectural as type - Multi-Layered Architecture with an in memory persistence layer.
 
-Structure
+Structure -
 The project is wrapped up with Maven. It consists of domain , service (business logic), web (rest apis). 
 The main game flow is implemented through Spring-like Chain of Responsibility pattern using Ordered interface.
 Every turn goes through pipeline of RulesApplier classes. Each of them is applying the rule, which is responsible for.
 
-Tech Stack
+Tech Stack -
 * Java 1.8
 * Spring Boot
 * Lombok
@@ -27,7 +27,7 @@ Tech Stack
 * Maven
 * Followed clean code approach as far as possible
 
-JavaDocs
+JavaDocs -
 Code is documented with as much as possible details. 
 
 How to build?
@@ -39,7 +39,12 @@ mvn spring-boot:run
 Swagger url ?
 http://localhost:8080/swagger-ui.html
 
+Junit Test Cases -
+Junit test cases cover more than 60% of code coverage
 
+Performance Test Cases -
+Performance test cases are JMeter test cases and both apis can cater to more than 200 requests
+per second
 
 
 
