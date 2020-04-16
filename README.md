@@ -30,13 +30,13 @@ Tech Stack -
 JavaDocs -
 Code is documented with as much as possible details. 
 
-How to build?
+How to build - 
 mvn clean install (mvn clean install -DskipTests to skip test cases)
 
-How to run the application?
+How to run the application - 
 mvn spring-boot:run
 
-Swagger url ?
+Swagger url - 
 http://localhost:8080/swagger-ui.html
 
 Junit Test Cases -
