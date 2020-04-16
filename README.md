@@ -6,7 +6,7 @@ Architecture -
 It was chosen to use architectural as type - Multi-Layered Architecture with an in memory persistence layer.
 
 Structure -
-The project is wrapped up with Maven. It consists of domain , service (business logic), web (rest apis). 
+The project is wrapped up with Maven. It consists of 5 modules domain (holds domain objects and exceptions), service (business logic), web (web API and representation), utilities (holds common required code such as constants), security (this is disabled for now).
 The main game flow is implemented through Spring-like Chain of Responsibility pattern using Ordered interface.
 Every turn goes through pipeline of RulesApplier classes. Each of them is applying the rule, which is responsible for.
 
@@ -40,7 +40,7 @@ Swagger url ?
 http://localhost:8080/swagger-ui.html
 
 Junit Test Cases -
-Junit test cases cover more than 60% of code coverage
+Junit test coverage is 90% for web and service modules.
 
 Performance Test Cases -
 Performance test cases are JMeter test cases and both apis can cater to more than 200 requests
