@@ -1,5 +1,6 @@
 package com.game;
 
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
@@ -16,21 +17,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * 
  * */
 @SpringBootApplication
-@EnableCaching
-public class KalahGameApplication extends WebMvcConfigurerAdapter {
+public class KalahGameApplicationTest extends WebMvcConfigurerAdapter {
 
-	
-	/**
-	 * Entry method - Main.
-	 * */
-	public static void main(String[] args) {
-		SpringApplication.run(KalahGameApplication.class, args);
+	@Test
+	void contextLoads() {
 	}
 
-	/**
-	 * Method for registering {@link LoggingInterceptor}
-	 * 
-	 * @param registry {@link InterceptorRegistry}
-	 * */
 	
 }

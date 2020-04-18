@@ -1,48 +1,51 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>com.game</groupId>
-    <artifactId>Kalah-Game</artifactId>
-    <version>${versions.kalah}</version>
-  </parent>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.game</groupId>
+		<artifactId>Kalah-Game</artifactId>
+		<version>1.0.0</version>
+	</parent>
 
-  <artifactId>web</artifactId>
-     <packaging>jar</packaging>
+	<artifactId>web</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-  <dependencies>
-  	<dependency>
-  			<groupId>com.game</groupId>
-            <artifactId>domain</artifactId>
-            <version>${versions.kalah}</version>
-	</dependency>
-	<dependency>
-  			<groupId>com.game</groupId>
-            <artifactId>utilities</artifactId>
-            <version>${versions.kalah}</version>
-	</dependency>
-	<dependency>
-  			<groupId>com.game</groupId>
-            <artifactId>service</artifactId>
-            <version>${versions.kalah}</version>
-	</dependency>
-	<dependency>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.game</groupId>
+			<artifactId>domain</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.game</groupId>
+			<artifactId>utilities</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.game</groupId>
+			<artifactId>service</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 		</dependency>
-		
-  </dependencies>
-  
-  <build>
+
+	</dependencies>
+
+	<build>
 		<plugins>
-		<plugin>
+			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin> 
+			</plugin>
 		</plugins>
 	</build>
 </project>
